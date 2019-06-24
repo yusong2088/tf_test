@@ -13,7 +13,7 @@ train_step=tf.train.GradientDescentOptimizer(0.001).minimize(loss)
 sess=tf.Session()
 init=tf.global_variables_initializer()
 sess.run(init)
-for _ in range(1000):
+for _ in range(100000):
     sess.run(train_step,feed_dict={x:inputX,y_:inputY})
     if _%20==0:
         print("W的值为：",weight.eval(session=sess),"；bias的值为：",bias.eval(session=sess))
